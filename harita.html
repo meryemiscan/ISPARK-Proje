@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+   <head>
+
+      <title>İSPARK</title>
+
+      <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+
+      <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+   </head>
+
+   <body>
+      <div id = "map"style = "width: 100%; height: 900px"></div>
+      <script>
+
+         // Harita ayarlarını var ile oluşturuyoruz
+         var  mapOptions= {
+            center: [41.021901048704066, 28.984713630128613],
+            zoom:10  
+         }
+         
+         // Harita tanımlaması yapıyoruz
+         var map = new L.map('map', mapOptions);
+         
+         // Harita katmanını haritaya ekliyoruz
+
+         var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+         {
+	      maxZoom: 10,
+	     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+         }).addTo (map);
+         
+         // Arnavutköy Zemin Altı Otopark
+         L.marker ([41.1834616970172, 28.7394691885721]).addTo (map).bindPopup ('Arnavutköy Zemin Altı Otopark') ;
+
+         // Ataşehir Bulvar
+         L.marker ([40.992844048405, 29.1253191232681]).addTo (map).bindPopup ('Ataşehir Bulvar') ;
+
+         // Ataşehir Bulvar 20 kapasiteli
+         L.marker ([40.9927468719206, 29.1210544109344]).addTo (map).bindPopup ('Ataşehir Bulvar') ;
+
+         // Ataşehir Bulvarı Taksi Durağı
+         L.marker ([40.9925719800085, 29.1267067463254]).addTo (map).bindPopup ('Ataşehir Bulvarı Taksi Durağı')  ;
+
+         // Ataşehir Ihlamur Sokak
+         L.marker ([40.9903356345319, 29.1053795814514]).addTo (map).bindPopup ('Ataşehir Ihlamur Sokak') ;
+
+         // Bostancı Vergi Dairesi Açık Otopark
+         L.marker ([40.9625308244579, 29.1079999343615]).addTo (map).bindPopup ('Bostancı Vergi Dairesi Açık Otopark') ;
+
+         // Ataşehir Bulvar
+         L.marker ([40.9917095878278, 29.1271233332611]).addTo (map).bindPopup ('Ataşehir Bulvar') ;
+
+         // Ataşehir Umut Sokak Açık Otopark
+         L.marker ([40.9720450780398, 29.1013688141632]).addTo (map).bindPopup ('Ataşehir Umut Sokak Açık Otopark')  ;
+
+         // Yeşil Vadi Sokak
+         L.marker ([40.9670716467853, 29.1058243767132]).addTo (map).bindPopup ('Yeşil Vadi Sokak')  ;
+
+         // Ataşehir Bulvar 25 kapasiteli
+         L.marker ([40.9934481585166, 29.1276929465593]).addTo (map).bindPopup ('Ataşehir Bulvar')  ;
+
+         // Ataşehir Bulvar 20 kapasiteli
+         L.marker ([40.9925423959336, 29.1192117333412]).addTo (map).bindPopup ('Ataşehir Bulvar')  ;
+
+         // Ataşehir Bulvar 35 kapasiteli
+         L.marker ([40.9926942345984, 29.1261345148087]).addTo (map).bindPopup ('Ataşehir Bulvar')  ;
+
+         // Ataşehir Bulvar 25 kapasiteli
+         L.marker ([40.9930909318858, 29.1276636706576]).addTo (map).bindPopup ('Ataşehir Bulvar') ;
+
+         // Ataşehir Bulvar 25 kapasiteli
+         L.marker ([40.9916657738709, 29.1270089149475]).addTo (map).bindPopup ('Ataşehir Bulvar') ;
+
+         // Bostancı Vergi Dairesi Açık Otopark
+         L.marker ([40.9625103489262, 29.1080598103622]).addTo (map).bindPopup ('Bostancı Vergi Dairesi Açık Otopark') ;
+
+         // Ataşehir Bulvar
+         L.marker ([40.9924151622938, 29.1173448206253]).addTo (map).bindPopup ('Ataşehir Bulvar') ;
+
+         // Ataşehir Bulvar
+         L.marker ([40.9924426745313, 29.1178984788888]).addTo (map).bindPopup ('Ataşehir Bulvar') ;
+
+         // Kozyatağı Sebze-Meyve Hal
+         L.marker ([40.978484297008, 29.1029469575332]).addTo (map).bindPopup ('Kozyatağı Sebze-Meyve Hal') ;
+
+         // İçerenköy Açık Otopark
+         L.marker ([40.9765973901075, 29.1045454144478]).addTo (map).bindPopup ('İçerenköy Açık Otopark') ;
+
+         // Ataşehir Bulvar
+         L.marker ([40.9933479050612, 29.1276947278216]).addTo (map).bindPopup ('Ataşehir Bulvar') ;
+
+         // Reşitpaşa Caddesi
+         L.marker ([40.9805253780395, 28.7187442759328 ]).addTo (map).bindPopup ('Reşitpaşa Caddesi') ;
+
+         // Avcılar Meydan Açık Otopark
+         L.marker ([40.983818171315, 28.7216091156006]).addTo (map).bindPopup ('Avcılar Meydan Açık Otopark') ;
+         
+         // Avcılar Mustafa Kemalpaşa Metrobüs Durağı  yanı Yol üstü Otopark
+         L.marker ([]).addTo (map).bindPopup ('Avcılar Mustafa Kemalpaşa Metrobüs Durağı  yanı Yol üstü Otopark') ;
+
+         // Avcılar İd
+         L.marker ([40.9711954866657, 28.7185068976158]).addTo (map).bindPopup ('Avcılar İd') ;
+
+         // Öğretmen Ev
+         L.marker ([40.9722402335861, 28.7141136765325]).addTo (map).bindPopup ('Öğretmen Ev') ;
+
+         // Reşitpaşa Caddesi
+         L.marker ([40.9806119149019, 28.7182958832553]).addTo (map).bindPopup ('Reşitpaşa Caddesi') ;
+
+         // Reşitpaşa Caddesi
+         L.marker ([40.9808495339875, 28.7170529967408]).addTo (map).bindPopup ('Reşitpaşa Caddesi') ;
+
+         // Öğretmen Ev
+         L.marker ([40.9722162402043, 28.7141700769065]).addTo (map).bindPopup ('Öğretmen Ev') ;
+
+         // Avcılar İd
+         L.marker ([40.9712309021757, 28.7184655666351]).addTo (map).bindPopup ('Avcılar İd') ;
+
+         // Reşitpaşa Caddesi
+         L.marker ([40.9811745900338, 28.7152270465458]).addTo (map).bindPopup ('Reşitpaşa Caddesi') ;
+         
+         // Bağcılar Emniyet Müdürlüğü Yanı Açık Otopark
+         L.marker ([41.0352735759429, 28.8597932017926]).addTo (map).bindPopup ('Bağcılar Emniyet Müdürlüğü Yanı Açık Otopark') ;
+
+         // Bağcılar Göztepe Zemin Alt
+         L.marker ([41.0564331827691, 28.8354305719794]).addTo (map).bindPopup ('Bağcılar Göztepe Zemin Alt') ;
+         
+         // Kirazlı Metro Durağı P+
+         L.marker ([41.0311288599712, 28.842225954775]).addTo (map).bindPopup ('Kirazlı Metro Durağı P+') ;
+
+         // Kirazlı Metro Durağı P+
+         L.marker ([41.0330978614511, 28.8417791173274]).addTo (map).bindPopup ('Kirazlı Metro Durağı P+') ;
+
+         // Bağcılar Yıldıztepe Katlı Otopark
+         L.marker ([41.0295158384932, 28.8559343388067]).addTo (map).bindPopup ('Bağcılar Yıldıztepe Katlı Otopark') ;
+
+         // Bağcılar Kent Meydanı Zemin Alt
+         L.marker ([41.0340028757587, 28.8556515123968]).addTo (map).bindPopup ('Bağcılar Kent Meydanı Zemin Alt') ;
+
+         // Bağcılar Çolakoğlu Zemin Altı Otopark
+         L.marker ([41.0329354584501, 28.8346857193462]).addTo (map).bindPopup ('Bağcılar Çolakoğlu Zemin Altı Otopark') ;
+
+         // Bağcılar Demirkapı Zemin Altı Otopark
+         L.marker ([41.0500841320561, 28.8327430659809]).addTo (map).bindPopup ('Bağcılar Demirkapı Zemin Altı Otopark') ;
+
+         // Azerbaycan Dostluk Parkı Zemin Altı Otopark
+         L.marker ([41.0443215746298, 28.8539815179886]).addTo (map).bindPopup ('Azerbaycan Dostluk Parkı Zemin Altı Otopark') ;
+
+         // Siyavuşpaşa Yer Altı Otopark
+         L.marker ([40.9965135143159, 28.8531558095713]).addTo (map).bindPopup ('Siyavuşpaşa Yer Altı Otopark') ;
+
+         // Ressam Halim Sokak Açık Otopark
+         L.marker ([40.9968297685815, 28.8639633383606]).addTo (map).bindPopup ('Ressam Halim Sokak Açık Otopark') ;
+
+         // Bahçelievler Devlet Hastanesi Yanı Katlı Otopark
+         L.marker ([41.0072185283518, 28.844041986263]).addTo (map).bindPopup ('Bahçelievler Devlet Hastanesi Yanı Katlı Otopark') ;
+
+         // Bahçelievler Soğanlı Zemin Altı Otopark
+         L.marker ([41.0152872949501, 28.858173123526]).addTo (map).bindPopup ('Bahçelievler Soğanlı Zemin Altı Otopark') ;
+
+         // A/46 Şirinevler-Kuleli-Başakşehir Minibüs Peron
+         L.marker ([40.9920154088387, 28.8469437200644]).addTo (map).bindPopup ('A/46 Şirinevler-Kuleli-Başakşehir Minibüs Peron') ;
+
+         // Bahçelievler Devlet Hastanesi Yanı Katlı Otopark
+         L.marker ([41.0075606625218, 28.8438658940414]).addTo (map).bindPopup ('Bahçelievler Devlet Hastanesi Yanı Katlı Otopark') ;
+
+         // Bahçelievler Soğanlı Zemin Altı Otopark
+         L.marker ([41.0153539312245, 28.8579412116647]).addTo (map).bindPopup ('Bahçelievler Soğanlı Zemin Altı Otopark') ;
+
+         // Dumlupınar Caddesi
+         L.marker ([40.9923047206351, 28.8401277755687]).addTo (map).bindPopup ('Dumlupınar Caddesi') ;
+
+         // Dumlupınar Caddesi
+         L.marker ([40.9921183451896, 28.8428014033613]).addTo (map).bindPopup ('Dumlupınar Caddesi') ;
+
+         // Ulu Cami Açık Otopark
+         L.marker ([40.9980205259426, 28.8500430885043]).addTo (map).bindPopup ('Ulu Cami Açık Otopark') ;
+
+         // Şirinevler Meydan Açık Otopark
+         L.marker ([40.9960143526425, 28.8494378328323]).addTo (map).bindPopup ('Şirinevler Meydan Açık Otopark') ;
+
+         // Bahçeli Evler Hizmet Hastanesi Önü
+         L.marker ([41.0011359141164, 28.8798835873604]).addTo (map).bindPopup ('Bahçeli Evler Hizmet Hastanesi Önü') ;
+
+         // Ressam Halim Sokak Açık Otopark
+         L.marker ([40.996474878231, 28.8640917646052]).addTo (map).bindPopup ('Ressam Halim Sokak Açık Otopark') ;
+
+         // Şirinevler Meydan Zeminaltı Otopark
+         L.marker ([40.9925266902717, 28.8496286819982]).addTo (map).bindPopup ('Şirinevler Meydan Zeminaltı Otopark') ;
+
+         // Bakırköy İstanbul Caddesi
+         L.marker ([40.9787060704662, 28.8796835621833]).addTo (map).bindPopup ('Bakırköy İstanbul Caddesi') ;
+
+         // Yeşilköy İstasyon Caddesi
+         L.marker ([40.9614558311587, 28.8245124883387]).addTo (map).bindPopup ('Yeşilköy İstasyon Caddesi') ;
+
+         // Yeşilköy İstasyon Caddesi
+         L.marker ([40.9603655442851, 28.8237786132743]).addTo (map).bindPopup ('Yeşilköy İstasyon Caddesi') ;
+
+         // Yeşilköy İstasyon Caddesi
+         L.marker ([40.9610007498372, 28.8242237924226]).addTo (map).bindPopup ('Yeşilköy İstasyon Caddesi') ;
+
+         // Florya Havuzlu Bahçe
+         L.marker ([40.9764200927432, 28.7908059257131]).addTo (map).bindPopup ('Florya Havuzlu Bahçe') ;
+
+         // Bakırköy İdo İskelesi Önü
+         L.marker ([40.9739659289559, 28.8760401946348]).addTo (map).bindPopup ('Bakırköy İdo İskelesi Önü') ;
+         
+         // Gençler Caddesi
+         L.marker ([40.980514470877, 28.8713505624634]).addTo (map).bindPopup ('Gençler Caddesi') ;
+
+         // Fişekhane Caddesi
+         L.marker ([40.9782330778419, 28.8721290488844]).addTo (map).bindPopup ('Fişekhane Caddesi') ;
+
+         // Yeşilköy Mesleki Eğitim Okulu Kapalı Otopark
+         L.marker ([40.960958429478, 28.8230609893799]).addTo (map).bindPopup ('Yeşilköy Mesleki Eğitim Okulu Kapalı Otopark') ;
+
+         // Gençler Caddesi
+         L.marker ([40.9806231385266, 28.8720502169509]).addTo (map).bindPopup ('Gençler Caddesi') ;
+
+         // Yeşilköy İstasyon Caddesi
+         L.marker ([40.9618791918256, 28.8248261886532]).addTo (map).bindPopup ('Yeşilköy İstasyon Caddesi') ;
+
+         // Yeşilköy İstasyon Caddesi
+         L.marker ([40.9598146793368, 28.8233813015516]).addTo (map).bindPopup ('Yeşilköy İstasyon Caddesi') ;
+
+         // Yeşilköy İstasyon Caddesi
+         L.marker ([40.9594651936517, 28.8231015016162]).addTo (map).bindPopup ('Yeşilköy İstasyon Caddesi') ;
+
+         // Güneş Plajı 
+         L.marker ([40.9715600499029, 28.7903692226487]).addTo (map).bindPopup ('Güneş Plajı') ;
+
+         // Yeşilyurt Çarşı 
+         L.marker ([40.9643809578392, 28.8379358175919]).addTo (map).bindPopup ('Yeşilyurt Çarşı') ;
+
+         // EGS Blokları Açık Otopark
+         L.marker ([40.98631063546, 28.8353911042213]).addTo (map).bindPopup ('EGS Blokları Açık Otopark') ;
+
+         // Yeşilköy Marin
+         L.marker ([40.9559679050794, 28.8215463493894]).addTo (map).bindPopup ('Yeşilköy Marin') ;
+
+         // Yeşilköy İstanbul Caddesi
+         L.marker ([40.9591366124616, 28.8347753164508]).addTo (map).bindPopup ('Yeşilköy İstanbul Caddesi') ;
+
+         // Röne Park Önü
+         L.marker ([40.9577468165466, 28.8320057062456]).addTo (map).bindPopup ('Röne Park Önü') ;
+
+         // Bakırköy Açı
+         L.marker ([40.9833651460067, 28.8756888962707]).addTo (map).bindPopup ('Bakırköy Açı') ;
+
+         // Bakırköy İdo İskelesi Önü
+         L.marker ([40.9739344805187, 28.876095779494]).addTo (map).bindPopup ('Bakırköy İdo İskelesi Önü') ;
+
+         // Çınar Hotel Önü
+         L.marker ([40.959460690961, 28.8359615614258]).addTo (map).bindPopup ('Çınar Hotel Önü') ;
+
+         // Menekşe Plaj
+         L.marker ([40.9762380109002, 28.7766741822376]).addTo (map).bindPopup ('Menekşe Plaj') ;
+
+         // Fişekhane Caddesi
+         L.marker ([40.9779952200221, 28.8692529442042]).addTo (map).bindPopup ('Fişekhane Caddesi') ;
+
+         // Ataköy Atrium
+         L.marker ([40.9881280422327, 28.88458602191436]).addTo (map).bindPopup ('Ataköy Atrium') ;
+
+         // Florya Sosyal Tesisler Otopark
+         L.marker ([40.9616551934753, 28.8091778755188]).addTo (map).bindPopup ('Florya Sosyal Tesisler Otopark') ;
+
+         // Bakırköy Sahil Cep Otopark
+         L.marker ([40.9747865771189, 28.8781663796872]).addTo (map).bindPopup ('Bakırköy Sahil Cep Otopark') ;
+
+         // Bakırköy İstanbul Caddesi
+         L.marker ([40.9784725236022, 28.8759572046035]).addTo (map).bindPopup ('Bakırköy İstanbul Caddesi') ;
+
+         // Bakırköy İstanbul Caddesi
+         L.marker ([40.9786184164184, 28.878549847204]).addTo (map).bindPopup ('Bakırköy İstanbul Caddesi') ;
+
+         // Yeşilköy Marine
+         L.marker ([40.9575323782277, 28.8231093953212]).addTo (map).bindPopup ('Yeşilköy Marine') ;
+
+         // Yeşilköy Marine
+         L.marker ([40.9571367972732, 28.8223157132699]).addTo (map).bindPopup ('Yeşilköy Marine') ;
+
+         // Yeşilköy Marine
+         L.marker ([40.9551893023394, 28.8212454401269]).addTo (map).bindPopup ('Yeşilköy Marine') ;
+
+         // Güneş Plajı 
+         L.marker ([40.9726998561913, 28.7868871782099]).addTo (map).bindPopup ('Güneş Plajı ') ;
+         
+         // Çiroz Yeşilköy Halk Pazar
+         L.marker ([40.9628491559778, 28.8129177050206]).addTo (map).bindPopup ('Çiroz Yeşilköy Halk Pazar') ;
+         
+         // Gençler Caddesi
+         L.marker ([40.9802074031904, 28.8693382177047]).addTo (map).bindPopup ('Gençler Caddesi') ;
+         
+         // Fişekhane Caddesi
+         L.marker ([40.9780745209189, 28.8700321405274]).addTo (map).bindPopup ('Fişekhane Caddesi') ;
+         
+         // Avni Akyol Bulvar
+         L.marker ([41.070025875213, 28.6854883151754]).addTo (map).bindPopup ('Avni Akyol Bulvar') ;
+         
+         // Avni Akyol Bulvar
+         L.marker ([41.0722613570856, 28.6895692413112]).addTo (map).bindPopup ('Avni Akyol Bulvar') ;
+
+         // Avni Akyol Bulvar
+         L.marker ([41.0701683773032, 28.6866684168193]).addTo (map).bindPopup ('Avni Akyol Bulvar') ;
+
+         // Bahçeşehir Gölet Açık Otopark
+         L.marker ([41.0720313711542, 28.6901833336488]).addTo (map).bindPopup ('Bahçeşehir Gölet Açık Otopark') ;
+
+         // Avni Akyol Bulvar
+         L.marker ([41.0715141387959, 28.6887158196755]).addTo (map).bindPopup ('Avni Akyol Bulvar') ;
+
+         // Bahçeşehir Doğa Parkı Caddesi
+         L.marker ([41.0673299119546, 28.6911566336691]).addTo (map).bindPopup ('Bahçeşehir Doğa Parkı Caddesi') ;
+
+         // Başakşehir Metro P+
+         L.marker ([41.107371570268, 28.8009291052705]).addTo (map).bindPopup ('Başakşehir Metro P+') ;
+
+         // Bayrampaşa Numunebağı Caddesi
+         L.marker ([41.0321010288981, 28.914427982918]).addTo (map).bindPopup ('Bayrampaşa Numunebağı Caddesi') ;
+
+         // Bayrampaşa Numunebağı Caddesi
+         L.marker ([41.0319549000146, 28.9143639643179]).addTo (map).bindPopup ('Bayrampaşa Numunebağı Caddesi') ;
+
+         // Bayrampaşa Nikah Dairesi Otopark
+         L.marker ([41.0431703036577, 28.9130437374115]).addTo (map).bindPopup ('Bayrampaşa Nikah Dairesi Otopark') ;
+
+         // Bayrampaşa Muratpaşa Yer Altı Otopark
+         L.marker ([41.0470146103079, 28.9081981991292]).addTo (map).bindPopup ('Bayrampaşa Muratpaşa Yer Altı Otopark') ;
+
+         // Bayrampaşa Sebze - Meyve Hal
+         L.marker ([41.0510037149773, 28.8886686112516]).addTo (map).bindPopup ('Bayrampaşa Sebze - Meyve Hal') ;
+
+         // Bayrampaşa Muzaffer Öztekin Zemin Altı Otopark
+         L.marker ([41.051038210844, 28.9066778907358]).addTo (map).bindPopup ('Bayrampaşa Muzaffer Öztekin Zemin Altı Otopark') ;
+
+         // 15 Temmuz Demokrasi Otogar
+         L.marker ([41.041551975453, 28.8945926849422]).addTo (map).bindPopup ('15 Temmuz Demokrasi Otogar') ;
+
+         // Bayrampaşa Atatürk Parkı Zemin Altı Otopark
+         L.marker ([41.0335973473562, 28.9130913424361]).addTo (map).bindPopup ('Bayrampaşa Atatürk Parkı Zemin Altı Otopark') ;
+
+         // Bayrampaşa Numunebağı Caddesi
+         L.marker ([41.0351621954738, 28.9127101404422]).addTo (map).bindPopup ('Bayrampaşa Numunebağı Caddesi') ;
+
+         // Bayrampaşa Abdi İpekçi Caddesi
+         L.marker ([41.0367913479225, 28.9120675804557]).addTo (map).bindPopup ('Bayrampaşa Abdi İpekçi Caddesi') ;
+
+         // Bayrampaşa Abdi İpekçi Caddesi
+         L.marker ([41.0343075331104, 28.9119276715415]).addTo (map).bindPopup ('Bayrampaşa Abdi İpekçi Caddesi') ;
+
+         // Arda Turan Spor Kompleksi Katlı Otopark
+         L.marker ([41.0389017145617, 28.9061343669891]).addTo (map).bindPopup ('Arda Turan Spor Kompleksi Katlı Otopark') ;
+
+         // Bayrampaşa Adapark Katlı Otopark
+         L.marker ([41.0641450801525, 28.8872194290161]).addTo (map).bindPopup ('Bayrampaşa Adapark Katlı Otopark') ;
+
+         // Bayrampaşa Devlet Hastanesi Cep Otopark
+         L.marker ([41.0414957483584, 28.9031956893257]).addTo (map).bindPopup ('Bayrampaşa Devlet Hastanesi Cep Otopark') ;
+
+         // Bayrampaşa Yenidoğan Mahallesi Zemin Altı Otopark
+         L.marker ([41.0395060134862, 28.9087543358991]).addTo (map).bindPopup ('Bayrampaşa Yenidoğan Mahallesi Zemin Altı Otopark') ;
+
+         // Bayrampaşa Muzaffer Öztekin Zemin Altı Otopark
+         L.marker ([41.0511236963451, 28.9067765960929]).addTo (map).bindPopup ('Bayrampaşa Muzaffer Öztekin Zemin Altı Otopark') ;
+
+         // Bayrampaşa Altıntepsi Zemin Altı Otopark
+         L.marker ([41.0382110158253, 28.9067464587186]).addTo (map).bindPopup ('Bayrampaşa Altıntepsi Zemin Altı Otopark') ;
+
+         // Vefabey Sokak
+         L.marker ([41.0655057224779, 29.0066024007241]).addTo (map).bindPopup ('Vefabey Sokak') ;
+
+         // Ihlamur Dere Caddesi
+         L.marker ([41.043801637794, 29.0034525176203]).addTo (map).bindPopup ('Ihlamur Dere Caddesi') ;
+
+         // Ihlamur Dere Caddesi
+         L.marker ([41.0463832988957, 29.0024029610158]).addTo (map).bindPopup ('Ihlamur Dere Caddesi') ;
+
+         // Ortaköy Dereboyu Caddesi
+         L.marker ([41.0525791949699, 29.0238075739657]).addTo (map).bindPopup ('Ortaköy Dereboyu Caddesi') ;
+
+         // Karakol Caddesi
+         L.marker ([41.0754029841827, 29.0164071577363]).addTo (map).bindPopup ('Karakol Caddesi') ;
+
+         // Levent Esnaf Önü
+         L.marker ([41.0759943082714, 29.0166958601018]).addTo (map).bindPopup ('Levent Esnaf Önü') ;
+
+         // Gonca Sokak
+         L.marker ([41.0759876415465, 29.0169571733483]).addTo (map).bindPopup ('Gonca Sokak') ;
+
+         //Yener Sokak
+         L.marker ([41.0642034983461, 29.0092500399386]).addTo (map).bindPopup ('Yener Sokak') ;
+
+         //Ortaköy Açık Otopark
+         L.marker ([41.0504156993832, 29.0325998453266]).addTo (map).bindPopup ('Ortaköy Açık Otopark') ;
+
+         //Bebek Sahil Yol
+         L.marker ([41.0702899418073, 29.0456584096228]).addTo (map).bindPopup ('Bebek Sahil Yol') ;
+
+         //Süleyman Seba Caddesi
+         L.marker ([41.0435127249054, 28.9966936380404]).addTo (map).bindPopup ('Süleyman Seba Caddesi') ;
+
+         //Yıldız Kavşağı Yol Üstü Otopark
+         L.marker ([41.0503307144634, 29.0072294331761]).addTo (map).bindPopup ('Yıldız Kavşağı Yol Üstü Otopark') ;
+
+         //Bebek Açık 
+         L.marker ([41.0769661627346, 29.0434456557705]).addTo (map).bindPopup ('Bebek Açık') ;
+
+         //Levent Çarşı 
+         L.marker ([41.0759293956722, 29.01555259334825]).addTo (map).bindPopup ('Levent Çarşı') ;
+
+         //Yıldızposta Caddesi 
+         L.marker ([41.0655239712901, 29.0085647691891]).addTo (map).bindPopup ('Yıldızposta Caddesi') ;
+
+         //Yıldızposta Caddesi 
+         L.marker ([41.0663668895065, 29.0059412710555]).addTo (map).bindPopup ('Yıldızposta Caddesi') ;
+
+         //Sefa Bayırı Sokak
+         L.marker ([41.0648088429101, 29.0089320264214]).addTo (map).bindPopup ('Sefa Bayırı Sokak') ;
+
+         //Nispetiye Caddesi
+         L.marker ([41.0753115872474, 29.0182192741601]).addTo (map).bindPopup ('Nispetiye Caddesi') ;
+
+         //Levent Çarşı
+         L.marker ([41.0758420371335, 29.015305282336]).addTo (map).bindPopup ('Levent Çarşı') ;
+
+         //Dünya Göz Hastanesi Önü
+         L.marker ([41.073330897332, 29.0180833877862]).addTo (map).bindPopup ('Dünya Göz Hastanesi Önü') ;
+
+         //Akçam Sokak (İş Bankası Önü
+         L.marker ([41.0866406858706, 29.0080873062634]).addTo (map).bindPopup ('Akçam Sokak (İş Bankası Önü') ;
+
+         //Bebek Arnavutköy Caddesi
+         L.marker ([41.0702813705886, 29.0457175223297]).addTo (map).bindPopup ('Bebek Arnavutköy Caddesi') ;
+
+         //Cihannuma Yol Üstü Otopark
+         L.marker ([41.0488910763028, 29.0093862165969]).addTo (map).bindPopup ('Cihannuma Yol Üstü Otopark') ;
+
+         //Cihannuma Yol Üstü Otopark
+         L.marker ([41.0481872205022, 29.0091871493428]).addTo (map).bindPopup ('Cihannuma Yol Üstü Otopark') ;
+
+         //Çırağan Sarayı Yol Üst
+         L.marker ([41.0448096163923, 29.0162684593892]).addTo (map).bindPopup ('Çırağan Sarayı Yol Üst') ;
+
+         //Levent Metro Yer Altı Otopark
+         L.marker ([41.0811486773446, 29.0106559103638]).addTo (map).bindPopup ('Levent Metro Yer Altı Otopark') ;
+
+         //Beşiktaş Halk Pazar
+         L.marker ([41.0497088077806, 29.0006257751308]).addTo (map).bindPopup ('Beşiktaş Halk Pazar') ;
+
+         //Beşiktaş Barboros Bulvarı Taksi Durağı
+         L.marker ([41.0428187170476, 29.0071029305494]).addTo (map).bindPopup ('Beşiktaş Barboros Bulvarı Taksi Durağı') ;
+
+         //Gazi Umur Paşa Sokağı
+         L.marker ([41.0586236902266, 29.0109362691402]).addTo (map).bindPopup ('Gazi Umur Paşa Sokağı') ;
+
+         //Nispetiye Caddesi Açık Otopark
+         L.marker ([41.0735048337776, 29.0177193407245]).addTo (map).bindPopup ('Nispetiye Caddesi Açık Otopark') ;
+
+         //Fulya Açık Otopark
+         L.marker ([41.0564978198988, 28.999802791782]).addTo (map).bindPopup ('Fulya Açık Otopark') ;
+
+         //Tamburi Ali Efendi
+         L.marker ([41.0785917283309, 29.0308624165627]).addTo (map).bindPopup ('Tamburi Ali Efendi') ;
+
+         //Levent Büyükdere Caddesi
+         L.marker ([41.0756267567518, 29.0147401521701]).addTo (map).bindPopup ('Levent Büyükdere Caddesi') ;
+
+         //Levent Büyükdere Caddesi
+         L.marker ([41.0761156949685, 29.0144992705845]).addTo (map).bindPopup ('Levent Büyükdere Caddesi') ;
+
+         //Bebek Sahil Yolu
+         L.marker ([41.083249887178, 29.0567034551944]).addTo (map).bindPopup ('Bebek Sahil Yolu') ;
+
+         //Ihlamur Dere Caddesi
+         L.marker ([41.0444391236136, 29.0030306876818]).addTo (map).bindPopup ('Ihlamur Dere Caddesi') ;
+
+         //Levent Bağlantı Yolu
+         L.marker ([41.0802186957629, 29.0124767466166]).addTo (map).bindPopup ('Levent Bağlantı Yolu') ;
+
+         //Bebek Sahil Yolu
+         L.marker ([41.0803494588544, 29.0526939406176]).addTo (map).bindPopup ('Bebek Sahil Yolu') ;
+
+         //Bebek Sahil Yolu
+         L.marker ([41.0818558368021, 29.0558047593186]).addTo (map).bindPopup ('Bebek Sahil Yolu') ;
+
+         //Bebek Sahil Yolu
+         L.marker ([41.0796940097818, 29.049546917487]).addTo (map).bindPopup ('Bebek Sahil Yolu') ;
+
+         //Bebek Arnavutköy Caddesi
+         L.marker ([41.072222185239, 29.0449030668544]).addTo (map).bindPopup ('Bebek Arnavutköy Caddesi') ;
+
+         //Beşiktaş Kadastro Önü
+         L.marker ([41.0503370072929, 29.0076809868127]).addTo (map).bindPopup ('Beşiktaş Kadastro Önü') ;
+
+         //Bebek Açı
+         L.marker ([41.0768657533188, 29.0434974035413]).addTo (map).bindPopup ('Bebek Açı') ;
+
+         //Yıldız Korusu
+         L.marker ([41.0479460489626, 29.0151175016762]).addTo (map).bindPopup ('Yıldız Korusu') ;
+
+         //Balmumcu Açık
+         L.marker ([41.0620415953331, 29.0106517214342]).addTo (map).bindPopup ('Balmumcu Açık') ;
+
+         //Çayır Çimen Sokak
+         L.marker ([41.0791599999506, 29.0133305110889]).addTo (map).bindPopup ('Çayır Çimen Sokak') ;
+
+         //Güneş Sokak Çıkmaz
+         L.marker ([41.0869371830021, 29.0076827710814]).addTo (map).bindPopup ('Güneş Sokak Çıkmazı') ;
+
+        // Akasyalı Sokak Tenis Clübü Önü
+        L.marker ([41.0865178336972, 29.0111027811794]).addTo (map).bindPopup ('Akasyalı Sokak Tenis Klübü Önü') ;
+
+        // Beşiktaş Emirhan Caddesi
+        L.marker ([41.0571555793897, 29.0090131759644]).addTo (map).bindPopup ('Beşiktaş Emirhan Caddesi');
+
+        // Süleyman Seba Caddesi
+        L.marker ([41.0425775730041, 28.9998185634613]).addTo (map).bindPopup ('Süleyman Seba Caddesi');
+
+        // Muallim Naci Açık Otopark
+        L.marker ([41.0561629020505, 29.0342713198597]).addTo (map).bindPopup ('Muallim Naci Açık Otopark');
+
+        // Ortabahçe Caddesi
+        L.marker ([41.0428391706898, 29.004285553242]).addTo (map).bindPopup ('Ortabahçe Caddesi');
+
+        // Prof.Dr.Ahmet Kemal Aru Caddesi
+        L.marker ([41.0810493592643, 29.0135379540576]).addTo (map).bindPopup ('Prof.Dr.Ahmet Kemal Aru Caddesi');
+
+        // Selvi Sokak
+        L.marker ([41.0862668875676, 29.0082733010954]).addTo (map).bindPopup ('Selvi Sokak');
+
+        // Bebek Sahil Yolu
+        L.marker ([41.0845829102999, 29.0570080224903]).addTo (map).bindPopup ('Bebek Sahil Yolu');
+
+        // Bebek Arnavutköy Caddesi
+        L.marker ([41.0672077467611, 29.0427219374845]).addTo (map).bindPopup ('Bebek Arnavutköy Caddesi');
+
+        // Cihannuma Yol Üstü Otopark
+        L.marker ([41.0495730252424, 29.0096090651442]).addTo (map).bindPopup ('Cihannuma Yol Üstü Otopark');
+
+        // Beşiktaş Portakal Yokuşu
+        L.marker ([41.050612361508, 29.0268364548683]).addTo (map).bindPopup ('Beşiktaş Portakal Yokuşu');
+ 
+         // Ortaköy Açık Otopark
+         L.marker ([41.0505565333188, 29.0328891015864]).addTo (map).bindPopup ('Ortaköy Açık Otopark');
+
+         // Beşiktaş Halk Pazar
+         L.marker ([41.0497226732138, 29.0005231475345]).addTo (map).bindPopup ('Beşiktaş Halk Pazar');
+
+         // Gazi Umur Paşa Sokak
+         L.marker ([41.0590106537782, 29.0114568326649]).addTo (map).bindPopup ('Gazi Umur Paşa Sokak');
+
+         // Muallim Naci Açık Otopark
+         L.marker ([41.0557660849204, 29.0341401100159]).addTo (map).bindPopup ('Muallim Naci Açık Otopark');
+
+         // Bebek Arnavutköy Caddesi
+         L.marker ([41.0843327967144, 29.056932287504]).addTo (map).bindPopup ('Bebek Arnavutköy Caddesi');
+
+         // Sabancı Öğretmen Evi Önü
+         L.marker ([41.0800099578934, 29.0655460030057]).addTo (map).bindPopup ('Sabancı Öğretmen Evi Önü');
+
+         // Küçüksu Kasrı Açık Otopark
+         L.marker ([41.0787506573235, 29.0657499432564]).addTo (map).bindPopup ('Küçüksu Kasrı Açık Otopark');
+
+         // Beykoz Pazar Yeri Açık Otopark
+         L.marker ([41.1400111163844, 29.0859021935845]).addTo (map).bindPopup ('Beykoz Pazar Yeri Açık Otopark');
+
+         // Sabancı Öğretmenevi Açık Otopark
+         L.marker ([41.0793995821568, 29.0688869508228]).addTo (map).bindPopup ('Sabancı Öğretmenevi Açık Otopark');
+
+         // Küçüksu Kasrı Açık Otopark
+         L.marker ([41.0785592750628, 29.0655611359131]).addTo (map).bindPopup ('Küçüksu Kasrı Açık Otopark');
+
+         // Beykoz-Yalıkö
+         L.marker ([41.135564870372, 29.0886092202278]).addTo (map).bindPopup ('Beykoz-Yalıkö');
+
+         // Kanlıca Barış Manço Caddesi
+         L.marker ([41.1001218927195, 29.066208971994]).addTo (map).bindPopup ('Kanlıca Barış Manço Caddesi');
+
+         // Hıdiv Kasrı
+         L.marker ([41.1034800086367, 29.0755519632817]).addTo (map).bindPopup ('Hıdiv Kasrı');
+
+         // Sabancı Öğretmenevi Açık Otopark
+         L.marker ([41.0810906777251, 29.0673535830189]).addTo (map).bindPopup ('Sabancı Öğretmenevi Açık Otopark');
+
+         // Sabancı Öğretmen Evi Önü
+         L.marker ([41.0796810572859, 29.0655296671]).addTo (map).bindPopup ('Sabancı Öğretmen Evi Önü');
+
+         // Sabancı Öğretmen Evi Önü
+         L.marker ([41.0811701377321, 29.0669951237303]).addTo (map).bindPopup ('Sabancı Öğretmen Evi Önü');
+
+         // Beykoz Sosyal Tesisler
+         L.marker ([41.1133482084457, 29.0863082384803]).addTo (map).bindPopup ('Beykoz Sosyal Tesisler');
+
+         // Beykoz Sosyal Tesisler
+         L.marker ([41.1136166110195, 29.0868669748306]).addTo (map).bindPopup ('Beykoz Sosyal Tesisler');
+
+         // Beykoz Sahil Cep Otopark
+         L.marker ([41.1294191839175, 29.0947677660433]).addTo (map).bindPopup ('Beykoz Sahil Cep Otopark');
+
+         // Sabancı Öğretmen Evi Önü
+         L.marker ([41.0802467042586, 29.0659158204735]).addTo (map).bindPopup ('Sabancı Öğretmen Evi Önü');
+
+         // Beykoz Fevzi Paşa Caddesi
+         L.marker ([41.1346004332964, 29.0915854648547]).addTo (map).bindPopup ('Beykoz Fevzi Paşa Caddesi');
+
+         //Gürpınar Yolu Caddesi
+         L.marker ([41.0185711653702, 28.6275832039646]).addTo (map).bindPopup ('Gürpınar Yolu Caddesi');
+
+         //Gürpınar Yolu Caddesi
+         L.marker ([41.0177784644351, 28.6274288238873]).addTo (map).bindPopup ('Gürpınar Yolu Caddesi');
+
+         //İspark West İstanbul Açık Otopark
+         L.marker ([40.9638856422757, 28.6590609810476]).addTo (map).bindPopup ('İspark West İstanbul Açık Otopark');
+
+         //Gürpınar Balık Hali Otopark
+         L.marker ([40.9672818477468, 28.602149543325]).addTo (map).bindPopup ('Gürpınar Balık Hali Otopark');
+
+         //Beylikdüzü Atatürk Bulvarı Açık Otopark
+         L.marker ([41.0136924097991, 28.6452767927199]).addTo (map).bindPopup ('Beylikdüzü Atatürk Bulvarı Açık Otopark');
+
+         //Gürpınar Yolu Caddesi
+         L.marker ([41.0175083222788, 28.6272524390684]).addTo (map).bindPopup ('Gürpınar Yolu Caddesi');
+
+         //Karaköy Perşembe Pazarı
+         L.marker ([41.0241210457322, 28.9702788851639]).addTo (map).bindPopup ('Karaköy Perşembe Pazarı');
+
+         //Kabataş Setüst
+         L.marker ([41.03618849195, 28.9939445232645]).addTo (map).bindPopup ('Kabataş Setüst');
+
+         //Odakule Önü
+         L.marker ([41.0322512079754, 28.975060751981]).addTo (map).bindPopup ('Odakule Önü');
+
+         //Karaköy Katl
+         L.marker ([41.0228939059538, 28.9772178004034]).addTo (map).bindPopup ('Karaköy Katl');
+
+         //Harbiye Zemin Altı Otopark
+         L.marker ([41.0405398332228, 28.9878819798619]).addTo (map).bindPopup ('Harbiye Zemin Altı Otopark');
+
+         //Mete Caddesi
+         L.marker ([41.0389534638449, 28.9883966239611]).addTo (map).bindPopup ('Mete Caddesi');
+
+         //Mete Caddesi
+         L.marker ([41.038232559675, 28.9879571839367]).addTo (map).bindPopup ('Mete Caddesi');
+
+         //İtalyan Hastanesi Karşısı Açık Otopark
+         L.marker ([41.0280590630134, 28.981574177742]).addTo (map).bindPopup ('İtalyan Hastanesi Karşısı Açık Otopark');
+
+         //Beyoğlu Tepebaşı Katlı Otopark
+         L.marker ([41.0319095316963, 28.97436439991]).addTo (map).bindPopup ('Beyoğlu Tepebaşı Katlı Otopark');
+
+         //Kasımpaşa Sosyal Tesisler Otopark
+         L.marker ([41.0298538374375, 28.9669297059178]).addTo (map).bindPopup ('Kasımpaşa Sosyal Tesisler Otopark');
+
+         //İnönü Caddesi
+         L.marker ([41.0358333354863, 28.9873333987001]).addTo (map).bindPopup ('İnönü Caddesi');
+
+         //Karaköy Perşembe Pazar
+         L.marker ([41.0234966570052, 28.9708827265182]).addTo (map).bindPopup ('Karaköy Perşembe Pazar');
+
+         //Odakule Önü
+         L.marker ([41.0322461629038, 28.9749682156837]).addTo (map).bindPopup ('Odakule Önü');
+
+         //Cihangir Caddesi
+         L.marker ([41.0312520349405, 28.9866401855668]).addTo (map).bindPopup ('Cihangir Caddesi');
+
+         //Karaköy Katl
+         L.marker ([41.0229402951222, 28.9772501409749]).addTo (map).bindPopup ('Karaköy Katl');
+
+         //Mete Caddesi
+         L.marker ([41.0384142241513, 28.9880214120353]).addTo (map).bindPopup ('Mete Caddesi');
+
+         //Beyoğlu Örnektepe Zemin Altı Otopark
+         L.marker ([41.054237061923, 28.9548772866058]).addTo (map).bindPopup ('Beyoğlu Örnektepe Zemin Altı Otopark');
+
+         //Beyoğlu Gazhane Bostan Sokak
+         L.marker ([41.038319321225, 28.989411490095]).addTo (map).bindPopup ('Beyoğlu Gazhane Bostan Sokak');
+
+         //İnönü Caddesi
+         L.marker ([41.0354898550985, 28.9874364451638]).addTo (map).bindPopup ('İnönü Caddesi');
+
+         //Beyoğlu Balıkçılar Önü
+         L.marker ([41.0220007012851, 28.9741247551725]).addTo (map).bindPopup ('Beyoğlu Balıkçılar Önü');
+
+         //Kabataş Setüst
+         L.marker ([41.0355090939263, 28.9932263878753]).addTo (map).bindPopup ('Kabataş Setüst');
+
+         //Arap Camii Açık Otopark
+         L.marker ([41.0226502734991, 28.972318920482]).addTo (map).bindPopup ('Arap Camii Açık Otopark');
+
+         //Cihangir Katl
+         L.marker ([41.0318488125712, 28.9858067091949]).addTo (map).bindPopup ('Cihangir Katl');
+
+         //Cihangir Katl
+         L.marker ([41.0318403687611, 28.9858072178951]).addTo (map).bindPopup ('Cihangir Katl');
+
+         //TRT Önü Açık Otopark
+         L.marker ([41.032590677925, 28.9746046067958]).addTo (map).bindPopup ('TRT Önü Açık Otopark');
+
+         //Beyoğlu Tepebaşı Katlı Otopark
+         L.marker ([41.0319095316963, 28.97436439991]).addTo (map).bindPopup ('Beyoğlu Tepebaşı Katlı Otopark');
+         
+         //Karaköy Azapkap
+         L.marker ([41.0255038632929, 28.9690995820422]).addTo (map).bindPopup ('Karaköy Azapkap');
+
+         //Beyoğlu Gazhane Bostan Sokak
+         L.marker ([41.0388109562502, 28.9901005980059]).addTo (map).bindPopup ('Beyoğlu Gazhane Bostan Sokak');
+
+         //Okçu Musa Caddesi
+         L.marker ([41.0265093265643, 28.9717101119185]).addTo (map).bindPopup ('Okçu Musa Caddesi');
+
+         //Voyvoda Caddesi
+         L.marker ([41.0237861417734, 28.9739947639643]).addTo (map).bindPopup ('Voyvoda Caddesi');
+
+         //Karaköy Meydan
+         L.marker ([41.0232014282903, 28.9753086281979]).addTo (map).bindPopup ('Karaköy Meydan');
+
+         //Meclis-i Mebusan Yokuş
+         L.marker ([41.0323479026334, 28.9883828811803]).addTo (map).bindPopup ('Meclis-i Mebusan Yokuş');
+
+         //İ.M.P Ön
+         L.marker ([41.0317898000128, 28.9746605563357]).addTo (map).bindPopup ('İ.M.P Ön');
+
+         //Sütlüce Miniatürk Yanı
+         L.marker ([41.0570907959868, 28.9499804001294]).addTo (map).bindPopup ('Sütlüce Miniatürk Yanı');
+
+         //Sütlüce Miniatürk Yanı
+         L.marker ([41.0570670441396, 28.9499257153103]).addTo (map).bindPopup ('Sütlüce Miniatürk Yanı');
+
+         //Karaköy Kemankeş Caddesi
+         L.marker ([41.0234164887299, 28.9784526837874]).addTo (map).bindPopup ('Karaköy Kemankeş Caddesi');
+
+         //Miniatürk Çadır Açık Otopark
+         L.marker ([41.0587435307513, 28.9502120388313]).addTo (map).bindPopup ('Miniatürk Çadır Açık Otopark');
+
+         //Büyükçekmeçe Metrobüs Durağı Yanı Zemin Altı Otopark
+         L.marker ([41.0220461669532, 28.6241373573355]).addTo (map).bindPopup ('Büyükçekmeçe Metrobüs Durağı Yanı Zemin Altı Otopark');
+
+         //Yıldıray Çınar Sokak
+         L.marker ([41.0216146636318, 28.6236955672732]).addTo (map).bindPopup ('Yıldıray Çınar Sokak');
+
+         //Aras Sokak
+         L.marker ([41.0224907672281, 28.6223217351186]).addTo (map).bindPopup ('Aras Sokak');
+
+         //Çekmeköy Mimar Sinan Caddesi
+         L.marker ([41.0326945707175, 29.175908267498]).addTo (map).bindPopup ('Çekmeköy Mimar Sinan Caddesi');
+
+         //Çekmeköy Çavuşbaşı Caddesi
+         L.marker ([41.0303729442975, 29.1724856900986]).addTo (map).bindPopup ('Çekmeköy Çavuşbaşı Caddesi');
+
+         //Çekmeköy Mimar Sinan Caddesi
+         L.marker ([41.0327095749505, 29.1763905167864]).addTo (map).bindPopup ('Çekmeköy Mimar Sinan Caddesi');
+
+         //Çekmeköy Çavuşbaşı Caddesi
+         L.marker ([41.0310263554403, 29.1728974457385]).addTo (map).bindPopup ('Çekmeköy Çavuşbaşı Caddesi');
+
+         //Çekmeköy Çavuşbaşı Caddesi
+         L.marker ([41.030674394162, 29.11727403294819]).addTo (map).bindPopup ('Çekmeköy Çavuşbaşı Caddesi');
+
+         //Çekmeköy Mimar Sinan Caddesi
+         L.marker ([41.032700826397, 29.1763980638423]).addTo (map).bindPopup ('Çekmeköy Mimar Sinan Caddesi');
+
+         //Esenler Menderes Metro İstasyonu Yanı
+         L.marker ([41.0426463543094, 28.8782581686974]).addTo (map).bindPopup ('Esenler Menderes Metro İstasyonu Yanı');
+
+         //Cengiz Topel  Yer Altı Katlı Otopark
+         L.marker ([41.0590445975741, 28.8643401861191]).addTo (map).bindPopup ('Cengiz Topel  Yer Altı Katlı Otopark');
+
+         //Esenler Adem Baştürk Kültür Merkezi Katl
+         L.marker ([41.0386915858544, 28.88508412597]).addTo (map).bindPopup ('Esenler Adem Baştürk Kültür Merkezi Katl');
+
+         //Esenler Menderes Parkı Zemin Altı Otopark
+         L.marker ([41.0413364320359, 28.8730288299591]).addTo (map).bindPopup ('Esenler Menderes Parkı Zemin Altı Otopark');
+
+         //Alibeyköy Cep Otogarı Otobüs Otopark
+         L.marker ([41.0876321246792, 28.9451551437378]).addTo (map).bindPopup ('Alibeyköy Cep Otogarı Otobüs Otopark');
+
+         //Alibeyköy Cep Otogarı P+
+         L.marker ([41.08823151328, 28.9423878505096]).addTo (map).bindPopup ('Alibeyköy Cep Otogarı P+');
+
+         //Eyüp Tekke Park
+         L.marker ([41.0564862110081, 28.9397962457675]).addTo (map).bindPopup ('Eyüp Tekke Park');
+
+         //Eyüp İstanbul Caddesi
+         L.marker ([41.1764729732221, 28.8898819017231]).addTo (map).bindPopup ('Eyüp İstanbul Caddesi');
+
+         //Alibeyköy Cep Otogarı Otobüs Otopark
+         L.marker ([41.0877762255869, 28.9449815819485]).addTo (map).bindPopup ('Alibeyköy Cep Otogarı Otobüs Otopark');
+
+         //Eyüp Pierloti Caddesi
+         L.marker ([41.0541552941076, 28.9330016712335]).addTo (map).bindPopup ('Eyüp Pierloti Caddesi');
+
+         //Feshane P+R Açık Otopark
+         L.marker ([41.046326666597, 28.9376096544914]).addTo (map).bindPopup ('Feshane P+R Açık Otopark');
+
+         //Alibeyköy Cep Otogarı P+
+         L.marker ([41.0878908883406, 28.9422369003296]).addTo (map).bindPopup ('Alibeyköy Cep Otogarı P+');
+
+         //Alibeyköy Yeşiltepe Zemin Altı Otopark
+         L.marker ([41.0793200794339, 28.9384609099211]).addTo (map).bindPopup ('Alibeyköy Yeşiltepe Zemin Altı Otopark');
+
+         //Eyüpsultan Akşemsettin Mahallesi Zemin Altı Otopark
+         L.marker ([41.0850632353534, 28.9258415975185]).addTo (map).bindPopup ('Alibeyköy Yeşiltepe Zemin Altı Otopark');
+
+         //Eyüp Silahtarağa Açık Otopark
+         L.marker ([41.0648623184837, 28.9414952399064]).addTo (map).bindPopup ('Eyüp Silahtarağa Açık Otopark');
+
+         //Feshane P+R Açık Otopark
+         L.marker ([41.0462634409545, 28.937658213568]).addTo (map).bindPopup ('Feshane P+R Açık Otopark');
+
+         //Eyüp İstanbul Caddesi
+         L.marker ([41.1793733766854, 28.8834084558235]).addTo (map).bindPopup ('Eyüp İstanbul Caddesi');
+
+         //Eyüp İstanbul Caddesi
+         L.marker ([41.1783602003273, 28.8844409943035]).addTo (map).bindPopup ('Eyüp İstanbul Caddesi');
+
+         //Eyüp İstanbul Caddesi
+         L.marker ([41.1764864031846, 28.8901048441369]).addTo (map).bindPopup ('Eyüp İstanbul Caddesi');
+
+         //Alibeyköy Cep Otogarı Açık Otopark
+         L.marker ([41.0877898089066, 28.9445382356644]).addTo (map).bindPopup ('Alibeyköy Cep Otogarı Açık Otopark');
+
+         //Alibeyköy Cep Otogarı Açık Otopark
+         L.marker ([41.0876029931356, 28.944418112968]).addTo (map).bindPopup ('Alibeyköy Cep Otogarı Açık Otopark');
+
+         //Alibeyköy Cep Otogarı Taksi Durağ
+         L.marker ([41.0881731777381, 28.9447433064985]).addTo (map).bindPopup ('Alibeyköy Cep Otogarı Taksi Durağ');
+
+         //Belgrad Ormanı Kurt Kemeri Girişi Otopark
+         L.marker ([41.1967928344884, 28.9196677863534]).addTo (map).bindPopup ('Belgrad Ormanı Kurt Kemeri Girişi Otopark');
+
+         //Belgrad Ormanı Kurt Kemeri Girişi Otopark
+         L.marker ([41.1970264007371, 28.9205176741653]).addTo (map).bindPopup ('Belgrad Ormanı Kurt Kemeri Girişi Otopark');
+
+         //Atatürk Bulvarı 
+         L.marker ([41.0122623682819, 28.9535198446565]).addTo (map).bindPopup ('Atatürk Bulvarı ');
+
+         //Yalı Köşkü Caddesi
+         L.marker ([41.0162288353242, 28.9754037237857]).addTo (map).bindPopup ('Yalı Köşkü Caddesi');
+
+         //Nakilbent Sokak
+         L.marker ([41.0039627453483, 28.9742909689498]).addTo (map).bindPopup ('Nakilbent Sokak');
+
+         //Dostluk Yurdu Sokak
+         L.marker ([41.007088735229, 28.9727752057011]).addTo (map).bindPopup ('Dostluk Yurdu Sokak');
+
+         //Güvenlik Caddesi
+         L.marker ([41.00702917811, 28.9566929102633]).addTo (map).bindPopup ('Güvenlik Caddesi');
+
+         //Fuat Paşa Caddesi
+         L.marker ([41.012915690585, 28.966008182442]).addTo (map).bindPopup ('Fuat Paşa Caddesi');
+
+         //Fuat Paşa Caddesi
+         L.marker ([41.0133649365751, 28.9659907739697]).addTo (map).bindPopup ('Fuat Paşa Caddesi');
+
+         //Fevzipaşa Caddesi
+         L.marker ([41.0181810129679, 28.948851266096]).addTo (map).bindPopup ('Fevzipaşa Caddesi');
+
+         //Fevzipaşa Caddesi
+         L.marker ([41.0193617448972, 28.9476636434165]).addTo (map).bindPopup ('Fevzipaşa Caddesi');
+
+         //Fevzipaşa Caddesi
+         L.marker ([41.022743248552, 28.9443834258777]).addTo (map).bindPopup ('Fevzipaşa Caddesi');
+
+         //Samatya Sahil
+         L.marker ([40.9989448342937, 28.9327923970388]).addTo (map).bindPopup ('Samatya Sahil');
+
+         //Akdeniz Caddesi
+         L.marker ([41.0194602703946, 28.9470128094271]).addTo (map).bindPopup ('Akdeniz Caddesi');
+
+         //Haseki Caddesi
+         L.marker ([41.0091178228887, 28.9440397407985]).addTo (map).bindPopup ('Haseki Caddesi');
+
+         //Deniz Feneri Otopark
+         L.marker ([41.00193367086, 28.9772077552262]).addTo (map).bindPopup ('Deniz Feneri Otopark');
+
+         //Deniz Feneri Otopark
+         L.marker ([41.0012788362889, 28.976816741458]).addTo (map).bindPopup ('Deniz Feneri Otopark');
+
+         //Aslanhane Sokak
+         L.marker ([41.0176966032964, 28.9504868216246]).addTo (map).bindPopup ('Aslanhane Sokak');
+
+         //Yenikapı Marmaray Büyük Otopark
+         L.marker ([41.0056862799103, 28.9504820108414]).addTo (map).bindPopup ('Yenikapı Marmaray Büyük Otopark');
+
+         //Ragıp Gümüşpala Açık Otopark
+         L.marker ([41.0212728203281, 28.9625353534806]).addTo (map).bindPopup ('Ragıp Gümüşpala Açık Otopark');
+
+         //Fatih Akşemsettin Caddesi
+         L.marker ([41.0220240723353, 28.9444391477412]).addTo (map).bindPopup ('Fatih Akşemsettin Caddesi');
+
+         //Fatih Akşemsettin Caddesi
+         L.marker ([41.0204039943667, 28.9416253566742]).addTo (map).bindPopup ('Fatih Akşemsettin Caddesi');
+
+         //Ragıp Gümüşpala Açık Otopark
+         L.marker ([41.0212466773958, 28.9625371803385]).addTo (map).bindPopup ('Ragıp Gümüşpala Açık Otopark');
+
+         //Yenikapı Tünel Üstü Açık Otopark
+         L.marker ([41.0024461865613, 28.9540604821249]).addTo (map).bindPopup ('Yenikapı Tünel Üstü Açık Otopark');
+
+         //Prof.Dr.Cemil Birsel Caddesi
+         L.marker ([41.0179393988833, 28.9671315420327]).addTo (map).bindPopup ('Prof.Dr.Cemil Birsel Caddesi');
+
+         //Ragıp Gümüşpala Caddesi (Camii Önü)
+         L.marker ([41.0205909977786, 28.9631964794009]).addTo (map).bindPopup ('Ragıp Gümüşpala Caddesi (Camii Önü)');
+
+         //Kabasakal Medrese Önü
+         L.marker ([41.0061732093938, 28.97890540407]).addTo (map).bindPopup ('Kabasakal Medrese Önü');
+
+         //Sultanahmet Turist Otopark
+         L.marker ([41.0061751910245, 28.9786523156457]).addTo (map).bindPopup ('Sultanahmet Turist Otopark');
+         
+         //Su Terazisi Sokak
+         L.marker ([41.0045807210557, 28.9726776025518]).addTo (map).bindPopup ('Su Terazisi Sokak');
+
+         //Aksaray Caddesi
+         L.marker ([41.0077334580615, 28.9543879613902]).addTo (map).bindPopup ('Aksaray Caddesi');
+
+         //Aksaray Caddesi
+         L.marker ([41.0088303270062, 28.9549925352072]).addTo (map).bindPopup ('Aksaray Caddesi');
+
+         //Türbedar Sokak
+         L.marker ([41.0089437566607, 28.9724379883571]).addTo (map).bindPopup ('Türbedar Sokak');
+
+         //Siyavuş Paşa Sokak
+         L.marker ([41.0153209172544, 28.9660103528594]).addTo (map).bindPopup ('Siyavuş Paşa Sokak');
+
+         //Fevzipaşa Caddesi
+         L.marker ([41.0166492325389, 28.950696909504]).addTo (map).bindPopup ('Fevzipaşa Caddesi');
+
+         //Fevzipaşa Caddesi
+         L.marker ([41.0200360261, 28.9472841009953]).addTo (map).bindPopup ('Fevzipaşa Caddesi');
+
+         //Etyemez Tekkesi Sokak
+         L.marker ([41.0029341019473, 28.9366560828552]).addTo (map).bindPopup ('Etyemez Tekkesi Sokak');
+
+         //İm
+         L.marker ([41.0201366525684, 28.9590951452881]).addTo (map).bindPopup ('İm');
+
+         //Horhor Caddesi Üzeri 
+         L.marker ([41.0142025900192, 28.9518573153197]).addTo (map).bindPopup ('Horhor Caddesi Üzeri');
+
+         //Millet Caddesi 
+         L.marker ([41.0100998055265, 28.9457781051854]).addTo (map).bindPopup ('Millet Caddesi');
+
+         //İshakPaşa Caddesi
+         L.marker ([41.0080509671786, 28.9814928372387]).addTo (map).bindPopup ('İshakPaşa Caddesi');
+
+         //Eminönü Açık
+         L.marker ([41.0189586751658, 28.9690391064942]).addTo (map).bindPopup ('Eminönü Açık');
+
+         //Kutlugün Sokak
+         L.marker ([41.0070033341579, 28.9811457957634]).addTo (map).bindPopup ('Kutlugün Sokak');
+
+         //Eminönü Açık
+         L.marker ([41.0184137869714, 28.9692768408793]).addTo (map).bindPopup ('Eminönü Açık');
+
+         //Fatih Katlı Otopark
+         L.marker ([41.0197286892249, 28.9396639838227]).addTo (map).bindPopup ('Fatih Katlı Otopark');
+
+         //Ebu Suut Caddesi
+         L.marker ([41.012969742489, 28.9763924538999]).addTo (map).bindPopup ('Ebu Suut Caddesi');
+
+         //Fatih Su Yolu Sokak
+         L.marker ([41.0161648948098, 28.9540594985905]).addTo (map).bindPopup ('Fatih Su Yolu Sokak');
+
+         //Fatih Su Yolu Sokak
+         L.marker ([41.0166520896524, 28.9541522394258]).addTo (map).bindPopup ('Fatih Su Yolu Sokak');
+
+         //Çapa Yol Üstü Otopark
+         L.marker ([41.0167852916899, 28.9309891714305]).addTo (map).bindPopup ('Çapa Yol Üstü Otopark');
+
+         //Yenikapı Marmaray Taksi Durağı
+         L.marker ([41.0064432942694, 28.9518016576767]).addTo (map).bindPopup ('Yenikapı Marmaray Taksi Durağı');
+
+         //Şehzadebaşı Caddesi
+         L.marker ([41.0127437614198, 28.9580063593037]).addTo (map).bindPopup ('Şehzadebaşı Caddesi');
+
+         //Fatih Minübüs Depolama Alanı / A40 Alibeyköy-Aksaray
+         L.marker ([41.0130242136156, 28.9469441351738]).addTo (map).bindPopup ('Fatih Minübüs Depolama Alanı / A40 Alibeyköy-Aksaray');
+
+         //Yenikapı Marmaray Büyük Otopark
+         L.marker ([41.0130242136156, 28.9469441351738]).addTo (map).bindPopup ('Yenikapı Marmaray Büyük Otopark');
+
+      </script>
+   </body>
+   
+</html>
